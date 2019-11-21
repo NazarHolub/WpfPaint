@@ -1,0 +1,71 @@
+﻿<Window x:Class="WpfExamplePaint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfExamplePaint"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Paint">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="52*" />
+                        <RowDefinition Height="339*" />
+                    </Grid.RowDefinitions>
+
+                    <InkCanvas Grid.Row="1" Margin="0,0,0,-45" Name="inkPaint" />
+                    <ToolBar Grid.Row="0" Height="50" VerticalAlignment="Top">
+                        <StackPanel Orientation="Horizontal">
+                            <RadioButton GroupName="Mode" Content="Ink Model" IsChecked="True" Checked="RadioButton_Checked" />
+                            <RadioButton GroupName="Mode" Content="Erase Model" IsChecked="False" Checked="RadioButton_Checked_1" />
+                            <RadioButton GroupName="Mode" Content="Selection Model" IsChecked="False" Checked="RadioButton_Checked_2" />
+                        </StackPanel>
+
+                        
+
+                        <ComboBox Name="combobox" SelectionChanged="ComboBox_SelectionChanged" Width="150" Height="40" Margin="0,0,0,5">
+                            <ComboBoxItem Name="Black">
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Fill="Black" Margin="60 0 0 0" Height="10" Width="10"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            
+                            <ComboBoxItem Name="Red" >
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Fill="Red" Margin="60 0 0 0" Height="10" Width="10"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            
+                            <ComboBoxItem Name="Green" Height="15">
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Fill="Green" Margin="60 0 0 0" Height="10" Width="10"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            
+                            <ComboBoxItem Name="Blue" Height="15">
+                                <StackPanel Orientation="Horizontal">
+                                    <Ellipse Fill="Blue" Margin="60 0 0 0" Height="10" Width="10"/>
+                                </StackPanel>
+                            </ComboBoxItem>
+                            
+                        </ComboBox>
+                        <Button Click="Button_Click_1">Save Data</Button>
+                        <Button Margin="10 0 0 0" Click="Button_Click">Load Data</Button>
+                        <Button Margin="10 0 0 0">Clear</Button>
+
+                    </ToolBar>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Documents">
+                <Grid>
+                    <TextBlock Text="Hggggggggggggg"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Api"/>
+            <TabItem Header="DataGrid"/>
+        </TabControl>
+    </Grid>
+</Window>
